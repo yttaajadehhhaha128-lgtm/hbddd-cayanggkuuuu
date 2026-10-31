@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>HEPIBESDEYY CAYANGKUUU 🎉</title>
+<style>
+  :root{
+    --pink-1:#ff2d78;
+    --pink-2:#ff6fa8;
+    --pink-3:#ffd1e3;
+    --plum-1:#2b0a2c;
+    --plum-2:#4a0f3d;
+    --gold:#ffd76b;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{
+    height:100%;
+    width:100%;
+    overflow:hidden;
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#1a0620;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+  #app{ position:relative; width:100vw; height:100vh; }
+
+  /* ===================== SCREEN 1 ===================== */
+  #screen1{
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(255,111,168,0.35), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(255,45,120,0.30), transparent 50%),
+      linear-gradient(160deg, var(--plum-1) 0%, var(--plum-2) 55%, #1a0620 100%);
+    transition: opacity .8s ease, filter .8s ease, transform .8s ease;
+    z-index:5;
+    padding:24px;
+  }
+  #screen1.leaving{
+    opacity:0;
+    filter:blur(6px);
+    transform:scale(1.04);
+    pointer-events:none;
+  }
+  .sparkle{
+    position:absolute;
+    border-radius:50%;
+    background:var(--gold);
+    opacity:.7;
+    animation:twinkle 3s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:.15; transform:scale(.7);}
+    50%{opacity:.9; transform:scale(1.15);}
+  }
+
+  .card{
+    position:relative;
+    max-width:560px;
+    width:100%;
+    max-height:88vh;
+    overflow-y:auto;
+    padding:38px 30px 30px;
+    border-radius:26px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+    border:1px solid rgba(255,209,227,0.25);
+    box-shadow:0 30px 70px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.15);
+    backdrop-filter:blur(6px);
+    text-align:center;
+    scrollbar-width:thin;
+    scrollbar-color:var(--pink-2) transparent;
+  }
+  .card::-webkit-scrollbar{width:5px;}
+  .card::-webkit-scrollbar-thumb{background:var(--pink-2); border-radius:10px;}
+
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--pink-3);
+    opacity:.75;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .title{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(24px,5.5vw,34px);
+    line-height:1.25;
+    color:#fff;
+    text-shadow:0 2px 18px rgba(255,45,120,0.55);
+    margin-bottom:18px;
+  }
+  .title .accent{ color:var(--gold); font-style:normal; }
+
+  .msg{
+    color:#f6e6ef;
+    font-size:15.5px;
+    line-height:1.85;
+    font-weight:300;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .msg p{ margin:0; }
+
+  .closing{
+    margin-top:22px;
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(20px,4.5vw,26px);
+    color:var(--pink-3);
+  }
+
+  .divider{
+    width:60px; height:2px; margin:20px auto;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity:.8;
+  }
+
+  #tekanBtn{
+    margin-top:6px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    color:var(--pink-3);
+    font-family:'Poppins',sans-serif;
+  }
+  .tap-icon{
+    width:58px; height:58px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 35% 30%, var(--pink-2), var(--pink-1) 70%);
+    box-shadow:0 8px 22px rgba(255,45,120,0.55), 0 0 0 0 rgba(255,111,168,0.6);
+    animation:pulseRing 2s ease-out infinite;
+  }
+  .tap-icon svg{ width:26px; height:26px; fill:#fff; }
+  @keyframes pulseRing{
+    0%{ box-shadow:0 8px 22px rgba(255,45,120,0.55), 0 0 0 0 rgba(255,111,168,0.55);}
+    70%{ box-shadow:0 8px 22px rgba(255,45,120,0.55), 0 0 0 16px rgba(255,111,168,0);}
+    100%{ box-shadow:0 8px 22px rgba(255,45,120,0.55), 0 0 0 0 rgba(255,111,168,0);}
+  }
+  .tap-label{
+    font-size:12.5px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+
+  /* ===================== SCREEN 2 ===================== */
+  #screen2{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 50% 40%, #3a0f33 0%, #1a0620 65%, #0d0311 100%);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1s ease;
+    z-index:4;
+  }
+  #screen2.active{ opacity:1; pointer-events:auto; }
+
+  #heartCanvas{ position:absolute; inset:0; display:block; touch-action:none; cursor:grab; }
+  #heartCanvas:active{ cursor:grabbing; }
+
+  .hint{
+    position:absolute;
+    left:50%; bottom:26px;
+    transform:translateX(-50%);
+    color:var(--pink-3);
+    font-size:12.5px;
+    letter-spacing:1.5px;
+    text-align:center;
+    opacity:.65;
+    font-weight:300;
+    animation:fadeInHint 1.5s ease 1.2s both;
+    pointer-events:none;
+  }
+  @keyframes fadeInHint{ from{opacity:0; transform:translateX(-50%) translateY(6px);} to{opacity:.65; transform:translateX(-50%) translateY(0);} }
+
+  .top-title{
+    position:absolute;
+    top:26px; left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:#fff;
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(18px,4.2vw,24px);
+    text-shadow:0 2px 16px rgba(255,45,120,0.6);
+    opacity:0;
+    animation:fadeInHint 1.5s ease .6s forwards;
+    pointer-events:none;
+  }
+
+  .back-btn{
+    position:absolute;
+    top:20px;
+    left:28px;
+    width:38px; height:38px;
+    min-width:38px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 35% 30%, var(--pink-2), var(--pink-1) 70%);
+    box-shadow:0 6px 16px rgba(255,45,120,0.5);
+    z-index:20;
+    opacity:0;
+    animation:fadeInHint 1.5s ease .6s forwards;
+  }
+  .back-btn svg{ width:18px; height:18px; fill:#fff; }
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===================== SCREEN 1: UCAPAN ===================== -->
+  <section id="screen1">
+    <div class="card">
+      <div class="eyebrow">UNTUK NUYAA CAYANGG</div>
+      <div class="title">01-11-2026,celamatt ulangg tahunn ke <span class="accent">16</span> raraaa cayanggg! 🥳</div>
+
+      <div class="msg">
+        <p>happy sweet sixteen, rara cayanggg ❤️
+
+selamat ulang tahun yang ke-16 yaa, rara cayanggg. tepat di 1 november 2026 ini, aku cuma pengen kamu tau kalau kamu itu salah satu orang yang paling berarti buat aku.
+
+semoga di umur kamu yang baru ini, semua hal baik selalu dateng ke kamu. semoga kamu selalu sehat, bahagia, dan semua impian yang kamu punya satu per satu bisa tercapai.
+
+makasih yaa udah hadir di hidup aku. mungkin aku nggak selalu bisa ngasih hal yang sempurna, tapi aku bakal selalu berusaha buat bikin kamu ngerasa disayang dan dihargai.
+
+kalau nanti dunia lagi bikin kamu capek, jangan lupa kalau ada aku yang selalu peduli sama kamu. aku harap di umur 16 ini bakal ada banyak cerita indah yang kita lewatin bareng.
+
+selamat ulang tahun, rara cayanggg. ❤️
+semoga senyum kamu selalu ada, semoga bahagia kamu selalu cukup, dan semoga aku masih jadi salah satu alasan di balik senyum itu,DEDEEE GA NYANGKAAA BISAAA NEMENINNN KAKAA SAMPEEE UKTAHHHH,LOPYUUUUUUUUUUUUUU KAKAAAAAAAA 🫶🏻</p>
+        
+      </div>
+
+      <div class="divider"></div>
+      <div class="closing">tekann cayanggg><</div>
+
+      <button id="tekanBtn">
+        <span class="tap-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 3a1 1 0 0 0-2 0v8.17l-1.6-1.87a1.5 1.5 0 0 0-2.28 1.95l3.6 4.2c.55.9 1.53 1.55 2.68 1.55h2.6a3.5 3.5 0 0 0 3.5-3.5V9a1.5 1.5 0 0 0-3 0v-.5a1 1 0 0 0-2 0V8a1 1 0 0 0-2 0V3Z"/></svg>
+        </span>
+        <span class="tap-label">Tekan</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== SCREEN 2: LOVE 3D ===================== -->
+  <section id="screen2">
+    <button id="backBtn" class="back-btn" aria-label="Kembali">
+      <svg viewBox="0 0 24 24"><path d="M15.5 4.5a1.5 1.5 0 0 1 0 2.12L9.62 12.5l5.88 5.88a1.5 1.5 0 1 1-2.12 2.12l-7-7a1.5 1.5 0 0 1 0-2.12l7-7a1.5 1.5 0 0 1 2.12 0Z"/></svg>
+    </button>
+    <div class="top-title">HBD YAAA CAYANGGKUUU💗</div>
+    <canvas id="heartCanvas"></canvas>
+    <div class="hint">Sentuh &amp; geser untuk memutar</div>
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ---------- Sparkles on screen 1 ---------- */
+(function(){
+  const s1 = document.getElementById('screen1');
+  for(let i=0;i<26;i++){
+    const d = document.createElement('div');
+    d.className='sparkle';
+    const size = Math.random()*3+1.5;
+    d.style.width=size+'px';
+    d.style.height=size+'px';
+    d.style.left=Math.random()*100+'%';
+    d.style.top=Math.random()*100+'%';
+    d.style.animationDelay=(Math.random()*3)+'s';
+    d.style.animationDuration=(2+Math.random()*2.5)+'s';
+    s1.appendChild(d);
+  }
+})();
+
+/* ---------- Screen transition ---------- */
+const screen1 = document.getElementById('screen1');
+const screen2 = document.getElementById('screen2');
+let heartInited = false;
+
+document.getElementById('tekanBtn').addEventListener('click', () => {
+  screen1.classList.add('leaving');
+  setTimeout(() => { screen1.style.display='none'; }, 850);
+  screen2.classList.add('active');
+  if(!heartInited){
+    heartInited = true;
+    initHeart();
+  }
+});
+
+document.getElementById('backBtn').addEventListener('click', () => {
+  screen2.classList.remove('active');
+  screen1.style.display='flex';
+  requestAnimationFrame(() => {
+    screen1.classList.remove('leaving');
+  });
+});
+
+/* ---------- 3D dotted heart ---------- */
+function initHeart(){
+  const canvas = document.getElementById('heartCanvas');
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 7.2);
+
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias:true, alpha:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  /* --- soft round dot texture --- */
+  function makeDotTexture(){
+    const c = document.createElement('canvas');
+    c.width = 64; c.height = 64;
+    const ctx = c.getContext('2d');
+    const g = ctx.createRadialGradient(32,32,0,32,32,32);
+    g.addColorStop(0,'rgba(255,255,255,1)');
+    g.addColorStop(0.55,'rgba(255,255,255,0.95)');
+    g.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0,0,64,64);
+    return new THREE.CanvasTexture(c);
+  }
+  const dotTexture = makeDotTexture();
+
+  /* --- background floating sparkle particles --- */
+  (function addBackgroundStars(){
+    const N = 220;
+    const pos = new Float32Array(N*3);
+    for(let i=0;i<N;i++){
+      pos[i*3]   = (Math.random()-0.5)*22;
+      pos[i*3+1] = (Math.random()-0.5)*22;
+      pos[i*3+2] = -6 - Math.random()*8;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    const m = new THREE.PointsMaterial({
+      size:0.045, map:dotTexture, transparent:true, opacity:0.5,
+      color:0xffd1e3, depthWrite:false, sizeAttenuation:true
+    });
+    scene.add(new THREE.Points(g,m));
+  })();
+
+  /* --- build a filled, rounded (puffy) 3D heart made of dense points --- */
+  const heartGroup = new THREE.Group();
+  scene.add(heartGroup);
+
+  function heartInside(x, y){
+    // classic implicit heart region test: (x^2+y^2-1)^3 - x^2*y^3 <= 0
+    const x2 = x*x, y2 = y*y;
+    const a = x2 + y2 - 1;
+    return (a*a*a - x2*y2*y) <= 0;
+  }
+
+  const positions = [];
+  const colors = [];
+
+  const SCALE = 1.05;      // ukuran love: dikecilkan
+  const DEPTH = 0.55;      // ketebalan love (dibikin lebih tipis, tidak gemuk)
+  const STEP_XY = 0.045;   // rapatnya titik pada bidang x/y
+  const STEP_Z  = 0.09;    // rapatnya lapisan kedalaman
+
+  const colA = new THREE.Color(0xff2d78); // pink tua
+  const colB = new THREE.Color(0xff9dc4); // pink muda
+
+  for(let z = -1; z <= 1; z += STEP_Z){
+    const taper = Math.sqrt(Math.max(0, 1 - z*z)); // profil bulat (seperti bola) -> sisi love jadi membulat, tidak kotak
+    if(taper <= 0.02) continue;
+    for(let xi = -1.35; xi <= 1.35; xi += STEP_XY){
+      for(let yi = -1.25; yi <= 1.35; yi += STEP_XY){
+        // uji apakah titik ini termasuk di dalam bentuk love yang sudah diskalakan oleh 'taper'
+        const testX = xi / taper;
+        const testY = yi / taper;
+        if(taper > 0 && heartInside(testX, testY)){
+          const px = xi * SCALE;
+          const py = yi * SCALE * 0.92;
+          const pz = z * DEPTH;
+          positions.push(px, py, pz);
+
+          const t = (yi + 1.3) / 2.6; // gradasi warna atas-bawah
+          const c = colA.clone().lerp(colB, Math.min(1, Math.max(0, t)));
+          // sedikit variasi kilau berdasar kedalaman
+          const shade = 0.85 + 0.15 * taper;
+          colors.push(c.r*shade, c.g*shade, c.b*shade);
+        }
+      }
+    }
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+  const mat = new THREE.PointsMaterial({
+    size: 0.052,
+    map: dotTexture,
+    transparent: true,
+    vertexColors: true,
+    depthWrite: false,
+    sizeAttenuation: true,
+    opacity: 0.95
+  });
+
+  const heartPoints = new THREE.Points(geo, mat);
+  // love langsung tampil menghadap depan, tidak diputar otomatis saat dibuka
+  heartGroup.add(heartPoints);
+
+  /* --- drag to rotate (mouse + touch) --- */
+  let dragging = false;
+  let lastX = 0, lastY = 0;
+  let velX = 0, velY = 0;
+
+  function pointerDown(x,y){ dragging = true; lastX = x; lastY = y; velX = 0; velY = 0; }
+  function pointerMove(x,y){
+    if(!dragging) return;
+    const dx = x - lastX;
+    const dy = y - lastY;
+    heartGroup.rotation.y += dx * 0.006;
+    heartGroup.rotation.x += dy * 0.006;
+    heartGroup.rotation.x = Math.max(-1.1, Math.min(1.1, heartGroup.rotation.x));
+    velX = dx * 0.006;
+    velY = dy * 0.006;
+    lastX = x; lastY = y;
+  }
+  function pointerUp(){ dragging = false; }
+
+  canvas.addEventListener('mousedown', e => pointerDown(e.clientX, e.clientY));
+  window.addEventListener('mousemove', e => pointerMove(e.clientX, e.clientY));
+  window.addEventListener('mouseup', pointerUp);
+
+  canvas.addEventListener('touchstart', e => {
+    const t = e.touches[0]; pointerDown(t.clientX, t.clientY);
+  }, {passive:true});
+  canvas.addEventListener('touchmove', e => {
+    const t = e.touches[0]; pointerMove(t.clientX, t.clientY);
+  }, {passive:true});
+  canvas.addEventListener('touchend', pointerUp);
+
+  /* --- render loop with gentle inertia after drag --- */
+  function animate(){
+    requestAnimationFrame(animate);
+    if(!dragging){
+      if(Math.abs(velX) > 0.0001 || Math.abs(velY) > 0.0001){
+        heartGroup.rotation.y += velX;
+        heartGroup.rotation.x += velY;
+        heartGroup.rotation.x = Math.max(-1.1, Math.min(1.1, heartGroup.rotation.x));
+        velX *= 0.94; velY *= 0.94;
+      }
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+}
+</script>
+</body>
+</html>
